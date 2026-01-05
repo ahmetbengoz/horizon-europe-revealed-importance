@@ -7,7 +7,7 @@ Dataset URL:
 https://data.europa.eu/data/datasets/cordis-eu-research-projects-under-horizon-europe-2021-2027
 
 The dataset version used in the analysis corresponds to the download
-performed on [INSERT DOWNLOAD DATE], containing 19,031 project records.
+performed on 2026-01-05, containing 19,031 project records.
 
 Due to file size limitations, the raw CSV file is not stored in this repository.
 Users can reproduce the analysis by downloading the dataset directly
