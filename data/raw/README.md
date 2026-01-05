@@ -15,3 +15,4 @@ from the source URL and placing it in this folder with the filename:
 
 cordis_he_projects.csv
 
+To reproduce Supplementary Figure S1, run: python code/synthetic_validation.py
