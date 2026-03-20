@@ -1,30 +1,71 @@
-# Learning Context-Dependent Criteria Importance from Revealed Policy Outcomes
+# Learning Outcome-Conditioned Proxy-Importance Profiles from Policy Data: A Decision-Support Framework for Horizon Europe
 
-This repository provides the full reproducibility pipeline for the paper:
+This repository provides the reproducibility pipeline for the paper:
 
-Ahmet Bengoz,
-"Learning Context-Dependent Criteria Importance from Revealed Policy Outcomes:
-A Data-Driven Framework for Multi-Criteria Decision Making"
+**Ahmet Bengoz, "Learning Outcome-Conditioned Proxy-Importance Profiles from Policy Data: A Decision-Support Framework for Horizon Europe"**
 
-## Data
-Raw project data are obtained from the CORDIS Horizon Europe open dataset:
-https://data.europa.eu/data/datasets/cordis-eu-research-projects-under-horizon-europe-2021-2027
+## Overview
 
-The file `cordis_projects_2021_2024.csv` contains 19,031 projects.
+The study develops a reproducible decision-support framework for learning **outcome-conditioned proxy-importance profiles** from public Horizon Europe funded-project data.
 
-## Reproducibility
-To reproduce all results:
+The repository implements the full empirical workflow:
+- data audit
+- proxy construction
+- diagnostics
+- transformed profile generation
+- model comparison
+- ablation and effect-size analysis
+- downstream ranking demonstration
 
-1. Run `01_data_cleaning.py`
-2. Run `02_proxy_construction.py`
-3. Run `03_learning_model.py`
-4. Run `04_cross_validation.py`
-5. Run `05_statistical_tests.py`
+## Important interpretation note
 
-All tables and figures reported in the paper and supplementary materials
-are generated automatically.
+This repository implements **proxy-profile inference** from public funded-project metadata.
 
-## Environment
-Python 3.12 (64-bit)
+It does **not** claim to recover:
+- official evaluator weights
+- full latent preference structures
+- confidential evaluation rules used by the funding authority
 
-Required packages are listed in `requirements.txt`.
+The outputs should be interpreted as **policy-outcome-conditioned proxy-importance profiles**.
+
+## Data source
+
+The empirical analysis is based on the public CORDIS dataset for Horizon Europe projects (2021–2027), available through the European Union open data portal.
+
+Raw dataset file expected by the scripts:
+
+`data/cordis_he_projects.csv`
+
+## Empirical sample used in the study
+
+- Raw audited dataset: **18,374** project records
+- Valid profile-analysis sample: **17,917** project records
+
+## Repository structure
+
+```text
+horizon-europe-revealed-importance/
+│
+├── data/
+│   └── README.md
+│
+├── manuscript/
+│   └── README.md
+│
+├── outputs/
+│   ├── tables/
+│   └── figures/
+│
+├── scripts/
+│   ├── 01_data_audit.py
+│   ├── 02_proxy_construction.py
+│   ├── 03_proxy_diagnostics.py
+│   ├── 03b_proxy_transform_revision.py
+│   ├── 04_model_comparison.py
+│   ├── 05_ablation_and_importance_fast.py
+│   ├── 05b_effect_size_kruskal.py
+│   └── 06_downstream_demo.py
+│
+├── requirements.txt
+├── LICENSE
+└── README.md
