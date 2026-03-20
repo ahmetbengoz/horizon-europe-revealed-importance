@@ -69,3 +69,85 @@ horizon-europe-revealed-importance/
 ├── requirements.txt
 ├── LICENSE
 └── README.md
+## Reproducibility pipeline
+Run the scripts in the following order:
+
+01_data_audit.py
+Audits the raw Horizon Europe dataset and checks required fields.
+
+02_proxy_construction.py
+Constructs the raw proxy variables and the initial project-level profile dataset.
+
+03_proxy_diagnostics.py
+Produces proxy diagnostics and normalization sensitivity checks.
+
+03b_proxy_transform_revision.py
+Applies the revised transformed profile-generation procedure used in the final study.
+
+04_model_comparison.py
+Compares predictive models using error-based and rank-based metrics.
+
+05_ablation_and_importance_fast.py
+Performs contextual ablation analysis and feature-importance aggregation.
+
+05b_effect_size_kruskal.py
+Computes Kruskal–Wallis statistics and epsilon-squared effect sizes across funding schemes.
+
+06_downstream_demo.py
+Produces the downstream ranking demonstration under equal, learned, and entropy weighting scenarios.
+
+## Main outputs
+# Tables
+outputs/tables/Table_proxy_distribution.xlsx
+outputs/tables/Table_model_comparison.xlsx
+outputs/tables/Table_temporal_holdout.xlsx
+outputs/tables/Table_ablation.xlsx
+outputs/tables/Table_feature_importance.xlsx
+outputs/tables/Table_kruskal_effect_size.xlsx
+outputs/tables/Table_ranking_comparison.xlsx
+outputs/tables/Table_normalization_robustness.xlsx
+outputs/tables/Table_proxy_transform_revision.xlsx
+
+# Figures
+outputs/figures/Figure_proxy_correlation.png
+outputs/figures/Figure_feature_importance.png
+outputs/figures/Figure_rank_shift.png
+
+## Main methodological components
+### The final empirical design includes:
+### proxy diagnostics
+### revised transformation and percentile-based scaling
+### cross-validated model comparison
+### late-period temporal validation
+### ablation analysis
+### feature-importance analysis
+### effect-size analysis across funding schemes
+### downstream ranking comparison
+
+## Software requirements
+
+The required Python packages are listed in:
+
+requirements.txt
+
+Typical dependencies include:
+
+pandas
+numpy
+scikit-learn
+scipy
+matplotlib
+openpyxl
+
+## Data availability
+
+The repository documents the reproducibility pipeline and output structure for the study.
+
+The raw project data are obtained from the public CORDIS Horizon Europe dataset.
+Users should download the raw file and place it in the data/ folder as:
+
+cordis_he_projects.csv
+
+## Citation note
+
+If you use this repository, please cite the associated paper once published.
